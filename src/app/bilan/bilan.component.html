@@ -1,0 +1,183 @@
+<body >
+  
+    <div id="content"  class="dashboard">
+    
+        <div class="profile">
+            <h2>Boiler energy balance</h2>
+        </div>
+    
+        
+    
+        <div class="table-one">
+            <h2>Fuel Composition</h2>
+            <div class="table-wrap">
+                <table>
+                    <tr>
+                        <th>The chemical elements of fuel</th>
+                        <th>Percent %</th>
+                        <th>Mass Flow Rate (kg/h)</th>
+                        <th>Molar Mass (kg/mol)</th>
+                        <th>Molar Flow Rate (mol/h)</th>
+                    </tr>
+                    <tr>
+                        <td>Carbon</td>
+                        <td>{{ carbonPercentage }}%</td>
+                        <td>{{ carbonMassResult }}</td>
+                        <td>{{carbonMassMolaire}}</td>
+                        <td>{{carbonMolarFlow}}</td>
+                    </tr>
+                    <tr>
+                        <td>Hydrogen</td>
+                        <td>{{hydrogenPercentage}}%</td>
+                        <td>{{hydrogenMassResult}}</td>
+                        <td>{{hydrogenMassMolaire}}</td>
+                        <td>{{hydrogenMolarFlow}}</td>
+                    </tr>
+                    <tr>
+                        <td>Sulfur</td>
+                        <td>{{sulfurPercentage}}%</td>
+                        <td>{{sulfurMassResult}}</td>
+                        <td>{{sulfurMassMolaire}}</td>
+                        <td>{{sulfurMolarFlow}}</td>
+                    </tr>
+                    <tr>
+                        <td>Oxygen</td>
+                        <td>{{oxygenPercentage}}%</td>
+                        <td>{{oxygenMassResult}}</td>
+                        <td>{{oxygenMassMolaire}}</td>
+                        <td>{{oxygenMolarFlow}}</td>
+                    </tr>
+                    <tr>
+                        <td>Nitrogen</td>
+                        <td>{{nitrogenPercentage}}%</td>
+                        <td>{{nitrogenMassResult}}</td>
+                        <td>{{nitrogenMassMolaire}}</td>
+                        <td>{{nitrogenMolarFlow}}</td>
+                    </tr>
+                    <tr>
+                        <td>Fuel</td>
+                        <td>100%</td>
+                        <td><input type="text" id="fuel" [(ngModel)]="fuelInput"></td>
+                    </tr>
+                    
+                </table>
+                
+            </div>
+            
+            
+        </div>
+    
+    
+    
+        <div class="table-two">
+            <h2>Air Flow and Excess Air Calculation</h2>
+            <table>
+                <tr>
+                    <th>Theoretical Molar Flow Rate of O² (mol/h)</th>
+                    <td>{{oxygenFlowRate}}</td>
+                </tr>
+                <tr>
+                    <th>Theoretical Molar Flow Rate of Air (mol/h)</th>
+                    <td>{{airFlowRate}}</td>
+                </tr>
+                <tr>
+                    <th>Theoretical Mass Flow Rate of Air (kg/h)</th>
+                    <td>{{airMolarFlowRate}}</td>
+                </tr>
+                <tr>
+                    <th>Excess Air</th>
+                    <td>23%</td>
+                </tr>
+                <tr>
+                    <th>Actual Air Flow Rate (kg/h)</th>
+                    <td>{{actualAir}}</td>
+                </tr>   
+            </table>
+        </div>
+
+
+        <div class="table-three">
+            <h2>Air Flow and Excess Air Calculation</h2>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Mass Flow Rate (kg/h)</th>
+                    <th>Enthalpy (kcal/kg)</th>
+                    <th>Lower Heating Value (kcal/kg)</th>
+                </tr>
+                <tr>
+                    <th>Water</th>
+                    <td><input type="text"  [(ngModel)]="waterMassFlowRateInput"></td>
+                    <td><input type="text"  [(ngModel)]="waterEnthalpyInput"></td>
+                    <td style="background-color: #626161;"></td>
+                    
+                </tr>
+                <tr>
+                    <th>Atomization steam</th>
+                    <td><input type="text"  [(ngModel)]="AtomizationSteamMassFlowRateInput"></td>
+                    <td><input type="text"  [(ngModel)]="AtomizationSteamEnthalpyInput"></td>
+                    <td style="background-color: #626161;"></td>
+                    
+                </tr>
+                <tr>
+                    <th>High-pressure steam</th>
+                    <td><input type="text"  [(ngModel)]="HighPressureSteamMassFlowRateInput"></td>
+                    <td><input type="text"  [(ngModel)]="HighPressureSteamEnthalpyInput"></td>
+                    <td style="background-color: #626161;"></td>
+                </tr>
+                <tr>
+                    <th>Air</th>
+                    <td><input type="text"  [(ngModel)]="AirFlowRateInput"></td>
+                    <td><input type="text"  [(ngModel)]="AirEnthalpyInput"></td> 
+                    <td style="background-color: #626161;"></td>
+                    
+                </tr>
+                <tr>
+                    <th>Fuel</th>
+                    <td>{{FuelMassFlow}}</td>
+                    <td style="background-color: #626161;"></td>
+                    <td><input type="text"  [(ngModel)]="FuelLowerHeatingInput"></td>     
+                </tr>  
+            </table>
+        </div>
+    
+        <div class="table-four">
+            <h2>Mass Flow and Calorific Values</h2>
+            <table>
+                <tr>
+                    <th>Energie introduite Qe (Kcal/h)</th>
+                    <td>{{EnergieIntroduite}}</td>
+                </tr>
+                <tr>
+                    <th>Useful Energy Qs (kcal/h)</th>
+                    <td>{{UsefullEnergy}}</td>
+                </tr>
+                <tr>
+                    <th>Wasted Energy Qs (kcal/h)</th>
+                    <td>{{WastedEenergy}}</td>
+                </tr>
+                <tr>
+                    <th>Efficiency </th>
+                    <td>{{Efficiency}}%</td>
+                </tr>
+                <tr>
+                    <th>Specific Consumption (kg of Fuel / kg of Steam)</th>
+                    <td>{{SpecificConsumption}}</td>
+                </tr>
+            </table>
+            <button  (click)="onCalculateClick()" class="button" id="display">
+                <span class="button_lg">
+                    <span class="button_sl"></span>
+                    <span class="button_text">Calculate</span>
+                </span>
+            </button>
+        </div>
+        
+        <button  class="Download-btn" (click)="DownloadPDF()"  id="display">
+            <span class="button_lg">
+                <span class="button_sl"></span>
+                <span class="button_text">Download As PDF</span>
+            </span>
+        </button>
+    </div>
+    </body>

@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Josefin+Slab&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.process {
+  width: 100%;
+  padding: 0 15px;
+  text-align: center;
+}
+
+.process__item {
+  user-select: none;
+  text-align: center;
+  position: relative;
+  padding: 15px 35px;
+  transition: 0.4s ease-in-out;
+}
+
+.process__item:hover {
+  background: darken(#fff, 5%);
+}
+
+.process__item:hover .process__number {
+  transform: translateY(5px);
+  color: #000000;
+}
+
+.process__number {
+  font-size: 90px;
+  -webkit-text-stroke: 1px #000000;
+  display: block;
+  color: transparent;
+  font-family: "Roboto Condensed";
+  font-weight: 700;
+  transition: 0.4s ease-in-out;
+}
+
+.process__title {
+  display: block;
+  font-family: "Roboto Condensed";
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  font-size: 35px;
+  color: #000000;
+  text-transform: uppercase;
+  margin-top: 30px;
+}
+
+.process__subtitle {
+  display: block;
+  font-family: "Josefin Slab";
+  font-size: 20px;
+  color: darken(#fff, 45%);
+  margin-top: 30px;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .process {
+    display: inline-block;
+  }
+
+  .process__item {
+    width: 49%;
+    display: inline-block;
+  }
+}
+
+@media (min-width: 1200px) {
+  .process {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .process__item {
+    width: 100%;
+  }
+
+  .process__item:not(:last-of-type)::after {
+    content: "";
+    width: 1px;
+    height: 75%;
+    background: darken(#fff, 45%);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    opacity: 0.2;
+    transform: translateY(-50%);
+  }
+}
